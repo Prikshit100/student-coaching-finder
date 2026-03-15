@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -21,7 +22,7 @@ background:linear-gradient(135deg,#020617,#0f172a);
 color:white;
 }
 
-/* HEADER */
+/* NAVBAR */
 
 header{
 display:flex;
@@ -33,7 +34,7 @@ position:relative;
 }
 
 .logo{
-font-size:30px;
+font-size:32px;
 font-weight:700;
 background:linear-gradient(90deg,#6366f1,#a855f7);
 -webkit-background-clip:text;
@@ -65,8 +66,6 @@ color:white;
 cursor:pointer;
 font-size:14px;
 }
-
-/* MENU BUTTON */
 
 .menu-btn{
 display:none;
@@ -137,6 +136,53 @@ cursor:pointer;
 
 }
 
+/* FOOTER */
+
+.footer{
+margin-top:80px;
+border-top:1px solid #1e293b;
+padding:40px 20px;
+background:#020617;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+max-width:1000px;
+margin:auto;
+}
+
+.footer h2{
+background:linear-gradient(90deg,#6366f1,#a855f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.footer-links{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.footer-links a{
+color:#94a3b8;
+text-decoration:none;
+font-size:14px;
+}
+
+.footer-links a:hover{
+color:white;
+}
+
+.copyright{
+text-align:center;
+margin-top:30px;
+color:#64748b;
+font-size:13px;
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
@@ -149,11 +195,8 @@ padding:18px 20px;
 display:block;
 }
 
-/* NAV DROPDOWN */
-
 nav{
 position:absolute;
-
 top:65px;
 right:20px;
 
@@ -179,16 +222,9 @@ nav.show{
 display:flex;
 }
 
-nav a{
-font-size:14px;
-}
-
 .share-btn{
 width:100%;
-text-align:center;
 }
-
-/* HERO TEXT */
 
 .hero h1{
 font-size:30px;
@@ -198,10 +234,14 @@ font-size:30px;
 font-size:15px;
 }
 
-/* SEARCH */
-
 .search-box{
 flex-direction:column;
+}
+
+.footer-container{
+flex-direction:column;
+text-align:center;
+align-items:center;
 }
 
 }
@@ -209,6 +249,7 @@ flex-direction:column;
 </style>
 
 </head>
+
 <body>
 
 
@@ -232,6 +273,7 @@ flex-direction:column;
 </header>
 
 
+
 <section class="hero">
 
 <h1>Find the Right Coaching Institute</h1>
@@ -242,13 +284,11 @@ flex-direction:column;
 <div class="search-box">
 
 <select>
-
 <option>Select Exam</option>
 <option>JEE</option>
 <option>NEET</option>
 <option>NDA</option>
 <option>CUET</option>
-
 </select>
 
 <input type="text" placeholder="Enter your city">
@@ -260,12 +300,44 @@ flex-direction:column;
 </section>
 
 
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-brand">
+<h2>Classify</h2>
+<p>Helping students find the right coaching institute.</p>
+</div>
+
+<div class="footer-links">
+<h4>Platform</h4>
+<a href="#">Home</a>
+<a href="#">Institutes</a>
+<a href="#">For Institutes</a>
+</div>
+
+<div class="footer-links">
+<h4>Support</h4>
+<a href="#">Contact</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms</a>
+</div>
+
+</div>
+
+<p class="copyright">
+© 2026 Classify. All rights reserved.
+</p>
+
+</footer>
+
+
+
 <script>
 
 function toggleMenu(){
-
 document.getElementById("navMenu").classList.toggle("show");
-
 }
 
 function shareSite(){
@@ -288,7 +360,6 @@ alert("Link copied");
 }
 
 </script>
-
 
 </body>
 </html>
