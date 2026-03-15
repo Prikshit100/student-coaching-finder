@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -19,22 +20,6 @@ font-family:Arial, Helvetica, sans-serif;
 body{
 background:#0f172a;
 color:white;
-overflow-x:hidden;
-}
-
-/* background glow */
-
-body::before{
-content:"";
-position:fixed;
-top:-200px;
-left:-200px;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#6366f1,transparent);
-opacity:.25;
-filter:blur(120px);
-z-index:-1;
 }
 
 /* HEADER */
@@ -46,8 +31,10 @@ align-items:center;
 padding:18px 8%;
 background:#020617;
 border-bottom:1px solid #1e293b;
-position:relative;
+flex-wrap:wrap;
 }
+
+/* LOGO */
 
 .logo{
 font-size:22px;
@@ -55,22 +42,18 @@ font-weight:600;
 color:#6366f1;
 }
 
-.nav-right{
-display:flex;
-align-items:center;
-gap:25px;
-}
+/* NAVBAR */
 
 nav{
 display:flex;
 gap:25px;
+align-items:center;
 }
 
 nav a{
 text-decoration:none;
 color:#cbd5f5;
 font-size:14px;
-transition:.3s;
 }
 
 nav a:hover{
@@ -86,16 +69,14 @@ padding:8px 16px;
 border-radius:6px;
 color:white;
 cursor:pointer;
-transition:.3s;
+font-size:13px;
 }
 
 .share-btn:hover{
 background:#4f46e5;
-transform:translateY(-2px);
-box-shadow:0 6px 20px rgba(99,102,241,.5);
 }
 
-/* MOBILE BUTTON */
+/* MOBILE MENU BUTTON */
 
 .menu-btn{
 display:none;
@@ -107,44 +88,34 @@ cursor:pointer;
 
 .hero{
 text-align:center;
-padding:120px 20px;
-max-width:900px;
+padding:100px 20px;
+max-width:850px;
 margin:auto;
-animation:fadeUp 1s ease forwards;
-opacity:0;
 }
 
-/* gradient title */
-
 .hero h1{
-font-size:48px;
-margin-bottom:20px;
-background:linear-gradient(90deg,#6366f1,#22c55e);
--webkit-background-clip:text;
-color:transparent;
+font-size:40px;
+margin-bottom:18px;
 }
 
 .hero p{
 color:#94a3b8;
 margin-bottom:35px;
-font-size:18px;
 }
 
 /* SEARCH BOX */
 
 .search-box{
 background:#020617;
-padding:28px;
-border-radius:12px;
+padding:25px;
+border-radius:10px;
 border:1px solid #1e293b;
 display:flex;
-gap:12px;
+gap:10px;
 justify-content:center;
 flex-wrap:wrap;
-max-width:620px;
+max-width:600px;
 margin:auto;
-animation:fadeUp 1.3s ease forwards;
-opacity:0;
 }
 
 select,input{
@@ -156,29 +127,33 @@ color:white;
 min-width:150px;
 }
 
+/* SEARCH BUTTON */
+
 .search-btn{
+padding:12px 20px;
+border:none;
+border-radius:6px;
 background:#6366f1;
+color:white;
+cursor:pointer;
 }
 
 .search-btn:hover{
 background:#4f46e5;
-transform:translateY(-2px);
 }
 
 /* CTA */
 
 .cta{
 text-align:center;
-padding:100px 20px;
+padding:80px 20px;
 background:#020617;
-margin-top:60px;
 border-top:1px solid #1e293b;
-animation:fadeUp 1.6s ease forwards;
-opacity:0;
+border-bottom:1px solid #1e293b;
 }
 
 .cta h2{
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
 .cta p{
@@ -186,76 +161,55 @@ color:#94a3b8;
 margin-bottom:20px;
 }
 
-.cta button{
+/* REGISTER BUTTON */
+
+.register-btn{
 background:#10b981;
+padding:12px 20px;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
 }
 
-.cta button:hover{
+.register-btn:hover{
 background:#059669;
-transform:translateY(-2px);
 }
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:40px;
+padding:35px;
 color:#94a3b8;
-}
-
-/* ANIMATION */
-
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-from{
-transform:translateY(30px);
-}
 }
 
 /* MOBILE */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-nav{
-position:absolute;
-top:65px;
-right:20px;
-width:210px;
-background:#020617;
-flex-direction:column;
-display:none;
-padding:20px;
-border-radius:10px;
-border:1px solid #1e293b;
-box-shadow:0 10px 25px rgba(0,0,0,.6);
+.menu-btn{
+display:block;
 }
 
-nav a{
-padding:8px 0;
+nav{
+flex-direction:column;
+width:100%;
+display:none;
+margin-top:15px;
 }
 
 nav.show{
 display:flex;
 }
 
-.menu-btn{
-display:block;
-}
-
 .share-btn{
-display:none;
-}
-
-.mobile-share{
-display:block;
+width:100%;
 margin-top:10px;
 }
 
 .hero h1{
-font-size:32px;
+font-size:30px;
 }
 
 .search-box{
@@ -280,8 +234,6 @@ width:100%;
 
 <div class="logo">Classify</div>
 
-<div class="nav-right">
-
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <nav id="navMenu">
@@ -291,13 +243,9 @@ width:100%;
 <a href="#">For Institutes</a>
 <a href="#">Contact</a>
 
-<button onclick="shareSite()" class="share-btn mobile-share">Share</button>
-
-</nav>
-
 <button onclick="shareSite()" class="share-btn">Share</button>
 
-</div>
+</nav>
 
 </header>
 
@@ -308,7 +256,7 @@ width:100%;
 <h1>Find the Right Coaching Institute</h1>
 
 <p>
-Search and compare coaching institutes for exams like JEE and NEET.
+Search and discover coaching institutes for exams like JEE and NEET.
 </p>
 
 <div class="search-box">
@@ -336,7 +284,7 @@ Search and compare coaching institutes for exams like JEE and NEET.
 
 <p>List your institute on Classify and reach students searching for coaching.</p>
 
-<button>Register Institute</button>
+<button class="register-btn">Register Institute</button>
 
 </section>
 
@@ -359,14 +307,18 @@ document.getElementById("navMenu").classList.toggle("show");
 function shareSite(){
 
 if(navigator.share){
+
 navigator.share({
 title:"Classify",
 text:"Find coaching institutes easily",
 url:window.location.href
 });
+
 }else{
+
 navigator.clipboard.writeText(window.location.href);
 alert("Link copied");
+
 }
 
 }
@@ -374,4 +326,5 @@ alert("Link copied");
 </script>
 
 </body>
+
 </html>
