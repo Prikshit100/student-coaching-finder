@@ -283,7 +283,8 @@ Search and discover coaching institutes for competative exams.
 
 <input type="text" placeholder="Enter your city">
 
-<button class="search-btn">Search</button>
+<button class="search-btn"
+oneclick="goToresults()">Search</button>
 
 </div>
 
@@ -312,6 +313,17 @@ Search and discover coaching institutes for competative exams.
 
 
 <script>
+
+  <script>
+
+function goToResults(){
+
+const exam = document.querySelector("select").value;
+const city = document.querySelector("input").value;
+
+window.location.href = `results.html?exam=${exam}&city=${city}`;
+
+}
 
 function toggleMenu(){
 document.getElementById("navMenu").classList.toggle("show");
