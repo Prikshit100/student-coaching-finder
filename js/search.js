@@ -12,6 +12,7 @@ console.log("City:", city);
 const institutes = [
   { name: "Allen Career Institute", city: "Kota", exam: "JEE" },
   { name: "Aakash Institute", city: "Delhi", exam: "NEET" },
+  { name: "Physics Wallah", city: "Delhi", exam: "NEET" },
   { name: "Resonance", city: "Kota", exam: "JEE" }
 ];
 
