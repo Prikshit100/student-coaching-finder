@@ -1,9 +1,5 @@
 console.log("JS WORKING");
 
-const div = document.createElement("div");
-div.className = "card";
-
-
 // Get URL params
 const params = new URLSearchParams(window.location.search);
 const exam = params.get("exam");
@@ -37,6 +33,8 @@ if (filtered.length === 0) {
     div.innerHTML = `<h2>${item.name}</h2><p>${item.city}</p>`;
     results.appendChild(div);
 
+    const div = document.createElement("div");
+div.className = "card";
    
   });
 }
